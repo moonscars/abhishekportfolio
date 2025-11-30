@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android-Themed Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #1D1B20;
+      color: #FFFFFF;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* App Bar / Header */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: #3DDC84;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #1D1B20;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 2rem 3rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* Home Section */
+    #home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 4rem;
+    }
+
+    #home img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #3DDC84;
+      margin-bottom: 1rem;
+    }
+
+    #home h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    #home p {
+      font-size: 1.2rem;
+      color: #CCCCCC;
+    }
+
+    /* Floating Action Button */
+    .fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: #3DDC84;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #1D1B20;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .fab:hover {
+      transform: scale(1.1);
+    }
+
+    /* Projects Section */
+    #projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background-color: #2A292F;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.5rem;
+      color: #3DDC84;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: #CCCCCC;
+    }
+
+    /* Skills Section */
+    #skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+
+    .skill-chip {
+      background-color: #3DDC84;
+      color: #1D1B20;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    /* About Section */
+    #about {
+      background-color: #2A292F;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    #about h3 {
+      color: #3DDC84;
+      margin-bottom: 1rem;
+    }
+
+    /* Contact Section */
+    #contact {
+      margin-top: 2rem;
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    #contact input, #contact textarea {
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    #contact button {
+      background-color: #3DDC84;
+      color: #1D1B20;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    #contact button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin: 3rem 0 1rem;
+      color: #AAAAAA;
+    }
+
+    @media(max-width: 600px){
+      header {
+        flex-direction: column;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-top: 0.5rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header / App Bar -->
+  <header>
+    <h1>Your Name</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <img src="https://via.placeholder.com/120" alt="Profile Picture">
+    <h2>Android Developer</h2>
+    <p>Building beautiful Android apps with Material Design</p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2 style="color:#3DDC84; margin-bottom:1rem;">Projects</h2>
+    <div class="project-card">
+      <h3>Project 1</h3>
+      <p>Short description of project 1. Tech stack: Kotlin, Jetpack Compose.</p>
+    </div>
+    <div class="project-card">
+      <h3>Project 2</h3>
+      <p>Short description of project 2. Tech stack: Flutter, Firebase.</p>
+    </div>
+    <div class="project-card">
+      <h3>Project 3</h3>
+      <p>Short description of project 3. Tech stack: Java, Android Studio.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2 style="color:#3DDC84;">Skills</h2>
+    <div class="skill-chip">Kotlin</div>
+    <div class="skill-chip">Java</div>
+    <div class="skill-chip">Flutter</div>
+    <div class="skill-chip">Jetpack Compose</div>
+    <div class="skill-chip">Firebase</div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h3>About Me</h3>
+    <p>I am an Android developer passionate about building sleek and responsive mobile apps using modern Material Design principles. I enjoy creating engaging user experiences and solving challenging problems.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 style="color:#3DDC84; text-align:center;">Contact Me</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Floating Action Button -->
+  <div class="fab" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    ✉️
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+</body>
+</html>
